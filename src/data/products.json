@@ -159,5 +159,15 @@
 		"stock": 50,
 		"category": "Electronics",
 		"thumbnails": []
+	},
+	{
+		"id": 12,
+		"title": "producto 12",
+		"description": "producto 12",
+		"code": "MVP200",
+		"price": 912,
+		"status": true,
+		"stock": 200,
+		"category": "Home"
 	}
 ]

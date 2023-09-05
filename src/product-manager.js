@@ -27,7 +27,7 @@ export class ProductManager {
     const id = this.generatorID(response)
     response.push({ id, ...product })
     await writeFile(this.#path, JSON.stringify(response, null, '\t'))
-    return { id, ...product }
+    return response
   }
 
   generatorID (products) {
