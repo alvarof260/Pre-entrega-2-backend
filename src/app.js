@@ -26,5 +26,8 @@ app.use('/products', viewRouter)
 const socketServer = new Server(httpServer)
 
 socketServer.on('connection', socket => {
+  socket.on('message', data => {
+    console.log(data)
+  })
   console.log('Nuevo cliente conectado')
 })
