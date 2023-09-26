@@ -6,8 +6,6 @@ import productRouter from './routers/products-router.js'
 import cartRouter from './routers/carts-router.js'
 import viewRouter from './routers/views-router.js'
 import mongoose from 'mongoose'
-import { ProductManager } from './data/managers/product-manager.js'
-import { productsDAO } from './models/products.js'
 
 const PORT = process.env.PORT ?? 8080
 const app = express()
