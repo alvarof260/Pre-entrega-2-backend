@@ -15,19 +15,33 @@ export class ProductManager {
   }
 
   async getProducts () {
-    const response = await readFile(this.#path, 'utf-8')
-    const parseResponse = JSON.parse(response)
-    return parseResponse
+    try {
+      const res = await readFile(this.#path, 'utf-8')
+      return JSON.parse(res)
+    } catch (err) {
+      throw new Error(err)
+    }
   }
 
   async addProduct (product) {
-    const response = await this.getProducts()
+    let response
+    try {
+      response = await this.getProducts()
+    } catch (err) {
+      console.log(err)
+      return []
+    }
     const found = response.find(el => el.code === product.code)
     if (found) return
     const id = this.generatorID(response)
     response.push({ id, ...product })
-    await writeFile(this.#path, JSON.stringify(response, null, '\t'))
-    return response
+    try {
+      await writeFile(this.#path, JSON.stringify(response, null, '\t'))
+      return response
+    } catch (err) {
+      console.log(err)
+      return []
+    }
   }
 
   generatorID (products) {
@@ -36,12 +50,12 @@ export class ProductManager {
   }
 
   async getProductByID (idProd) {
-    const products = await this.getProducts()
-    const product = products.find((el) => el.id === parseInt(idProd))
-    if (product) {
+    try {
+      const products = await this.getProducts()
+      const product = products.find((el) => el.id === parseInt(idProd))
       return product
-    } else {
-      return undefined
+    } catch (err) {
+      throw new Error(err)
     }
   }
 

@@ -1,5 +1,41 @@
-import { object, boolean, number, string } from 'zod'
+/* import { object, boolean, number, string } from 'zod' */
+import mongoose from 'mongoose'
 
+export const productsSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  code: {
+    type: String,
+    unique: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  status: {
+    type: Boolean,
+    required: true
+  },
+  stock: {
+    type: Number,
+    required: true
+  },
+  category: {
+    type: String,
+    required: true
+  },
+  thumbnails: {
+    type: Array,
+    default: []
+  }
+})
+/*
 const schemaProduct = object({
   title: string({
     invalid_type_error: 'title be must a string',
@@ -36,3 +72,4 @@ export function validateProduct (object) {
 export function validatePartialProduct (object) {
   return schemaProduct.partial().safeParse(object)
 }
+*/

@@ -5,6 +5,9 @@ import { Server } from 'socket.io'
 import productRouter from './routers/products-router.js'
 import cartRouter from './routers/carts-router.js'
 import viewRouter from './routers/views-router.js'
+import mongoose from 'mongoose'
+import { ProductManager } from './data/managers/product-manager.js'
+import { productsDAO } from './models/products.js'
 
 const PORT = process.env.PORT ?? 8080
 const app = express()
@@ -31,3 +34,10 @@ socketServer.on('connection', socket => {
     socketServer.emit('updatedProducts', data)
   })
 })
+
+try {
+  await mongoose.connect('mongodb+srv://alvarof260:delfina2@cluster0.cmr6jcw.mongodb.net/e-commerce')
+  console.log('db connect')
+} catch (err) {
+  throw new Error(err)
+}

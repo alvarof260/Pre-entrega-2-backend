@@ -1,6 +1,5 @@
 [
 	{
-		"id": 1,
 		"title": "Smartphone",
 		"description": "High-end smartphone with advanced features.",
 		"code": "PHN001",
@@ -15,7 +14,6 @@
 		]
 	},
 	{
-		"id": 2,
 		"title": "Running Shoes",
 		"description": "Comfortable running shoes for your active lifestyle.",
 		"code": "SHS002",
@@ -30,7 +28,6 @@
 		]
 	},
 	{
-		"id": 3,
 		"title": "Cotton Sheets",
 		"description": "Soft and breathable cotton sheets for a good night's sleep.",
 		"code": "HME003",
@@ -45,7 +42,6 @@
 		]
 	},
 	{
-		"id": 4,
 		"title": "Organic Snacks Box",
 		"description": "A box of assorted organic and healthy snacks.",
 		"code": "GRB004",
@@ -60,7 +56,6 @@
 		]
 	},
 	{
-		"id": 5,
 		"title": "Bluetooth Speaker",
 		"description": "Portable Bluetooth speaker for music on the go.",
 		"code": "SPK005",
@@ -75,7 +70,6 @@
 		]
 	},
 	{
-		"id": 6,
 		"title": "Graphic T-Shirt",
 		"description": "Stylish graphic t-shirt with unique design.",
 		"code": "CLT006",
@@ -90,7 +84,6 @@
 		]
 	},
 	{
-		"id": 7,
 		"title": "Cookware Set",
 		"description": "Complete set of non-stick cookware for your kitchen.",
 		"code": "KTC007",
@@ -105,7 +98,6 @@
 		]
 	},
 	{
-		"id": 8,
 		"title": "Fresh Produce Bundle",
 		"description": "Assortment of fresh and locally sourced produce.",
 		"code": "GRP008",
@@ -120,7 +112,6 @@
 		]
 	},
 	{
-		"id": 9,
 		"title": "Wireless Earbuds",
 		"description": "Wireless earbuds with noise-cancellation technology.",
 		"code": "EAR009",
@@ -135,7 +126,6 @@
 		]
 	},
 	{
-		"id": 10,
 		"title": "Denim Jeans",
 		"description": "Classic denim jeans for a casual yet stylish look.",
 		"code": "CLT010",
@@ -150,7 +140,6 @@
 		]
 	},
 	{
-		"id": 11,
 		"title": "title",
 		"description": "High-end computer with advanced features.",
 		"code": "PCN005",
@@ -161,7 +150,6 @@
 		"thumbnails": []
 	},
 	{
-		"id": 12,
 		"title": "producto 12",
 		"description": "producto 12",
 		"code": "MVP200",
