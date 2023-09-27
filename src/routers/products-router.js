@@ -1,9 +1,9 @@
 import { Router } from 'express'
 /* import { validatePartialProduct, validateProduct } from '../schema/product.js' */
-import { ProductManager } from '../data/managers/product-manager.js'
+import { ProductManagerBD } from '../dao/productManager.js'
 
 const router = Router()
-const DM = new ProductManager('src/data/products.json')
+const DM = new ProductManagerBD()
 
 router.get('/', async (req, res) => {
   const products = await DM.getProducts()
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const id = req.params.id
   const product = await DM.getProductByID(id)
-  if (!product) return res.status(404).json({ error: 'Product not found' })
+  if (!product) return res.status(404).json({ product })
   res.status(200).json(product)
 })
 
@@ -28,6 +28,8 @@ router.post('/', async (req, res) => {
   }
   const addProduct = await DM.addProduct(newProduct)
   res.status(201).json(addProduct) */
+  const addProduct = await DM.addProduct(req.body)
+  res.status(201).json(addProduct)
 })
 
 router.put('/:id', async (req, res) => {
@@ -37,13 +39,15 @@ router.put('/:id', async (req, res) => {
   const id = req.params.id
   const productUpdate = await DM.productUpdate(id, { ...result.data })
   res.status(200).json(productUpdate) */
+  const id = req.params.id
+  const productUpdate = await DM.updateProduct(id, req.body)
+  res.status(200).json(productUpdate)
 })
 
 router.delete('/:id', async (req, res) => {
   const id = req.params.id
-  const productDeleted = await DM.productDelete(id)
-  if (!productDeleted) return res.status(404).json({ error: 'Product not found' })
-  res.status(201).json(productDeleted)
+  await DM.deleteProduct(id)
+  res.status(201).json('se borro perfectamente!')
 })
 
 export default router
