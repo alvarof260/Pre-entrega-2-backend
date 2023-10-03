@@ -26,10 +26,16 @@ app.use('/products', viewRouter)
 
 const socketServer = new Server(httpServer)
 
+const log = []
+
 socketServer.on('connection', socket => {
   console.log('Nuevo cliente conectado')
   socket.on('productList', data => {
     socketServer.emit('updatedProducts', data)
+  })
+  socket.on('message', data => {
+    log.push({ userId: socket.id, message: data })
+    socketServer.emit('history', log)
   })
 })
 
