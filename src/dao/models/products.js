@@ -31,7 +31,7 @@ const productsSchema = new mongoose.Schema({
     required: true
   },
   thumbnails: {
-    type: Array,
+    type: [String],
     default: []
   }
 })
