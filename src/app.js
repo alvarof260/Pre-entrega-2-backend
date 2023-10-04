@@ -31,7 +31,6 @@ try {
       socketServer.emit('updatedProducts', data)
     })
     const messages = await messageModel.find().lean().exec()
-    console.log(messages)
     socketClient.emit('history', messages)
     socketClient.on('message', async data => {
       await messageModel.create(data)
