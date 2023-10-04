@@ -8,10 +8,6 @@ router.get('/', async (req, res) => {
   res.render('home', { products })
 })
 
-router.get('/chat', (req, res) => {
-  res.render('chat', {})
-})
-
 router.get('/realTimeProducts', async (req, res) => {
   const products = await productManager.getProducts()
   res.render('realTimeProducts', { products })
