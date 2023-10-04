@@ -134,7 +134,6 @@ router.put('/:cid/product/:pid', async (req, res) => {
     } else {
       cartToUpdate.products[productIndex].quantity = quantity
     }
-    // end: validaciones de quantity enviado por body
     const result = await cartsDAO.findByIdAndUpdate(cid, cartToUpdate, { returnDocument: 'after' })
     res.status(200).json({ result })
   } catch (err) {
