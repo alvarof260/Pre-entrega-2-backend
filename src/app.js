@@ -9,7 +9,7 @@ import cartRouter from './routers/carts-router.js'
 import viewRouter from './routers/views-router.js'
 import chatRouter from './routers/chat-router.js'
 
-const PORT = process.env.PORT ?? 8080
+export const PORT = process.env.PORT ?? 8080
 const app = express()
 
 app.use(express.json())

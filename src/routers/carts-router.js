@@ -1,7 +1,4 @@
 import { Router } from 'express'
-import { ProductManagerBD } from './productManager.js'
-
-const DM = new ProductManagerBD()
 
 const router = Router()
 /*
