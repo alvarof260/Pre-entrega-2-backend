@@ -1,6 +1,6 @@
 import { Router } from 'express'
 /* import { validatePartialProduct, validateProduct } from '../schema/product.js' */
-import { ProductManagerBD } from '../dao/productManager.js'
+import { ProductManagerBD } from './productManager.js'
 
 const router = Router()
 const DM = new ProductManagerBD()

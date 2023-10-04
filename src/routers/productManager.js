@@ -1,4 +1,4 @@
-import { productsDAO } from '../models/products.js'
+import { productsDAO } from '../dao/models/products.js'
 
 export class ProductManagerBD {
   async getProducts () {

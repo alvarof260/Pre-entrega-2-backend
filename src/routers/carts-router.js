@@ -1,12 +1,10 @@
 import { Router } from 'express'
-import { CartManager } from '../data/managers/cart-manager.js'
-import { ProductManager } from '../data/managers/product-manager.js'
+import { ProductManagerBD } from './productManager.js'
 
-const CM = new CartManager('src/data/carts.json')
-const DM = new ProductManager('src/data/products.json')
+const DM = new ProductManagerBD()
 
 const router = Router()
-
+/*
 router.post('/', async (req, res) => {
   const cart = await CM.createCart()
   res.status(201).json(cart)
@@ -26,6 +24,6 @@ router.post('/:cid/product/:pid', async (req, res) => {
   if (!isProduct) return res.status(404).json({ error: 'Product not found' })
   const carts = await CM.addProduct(cartId, prodId)
   res.status(200).json(carts)
-})
+}) */
 
 export default router
