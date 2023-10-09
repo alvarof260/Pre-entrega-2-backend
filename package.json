@@ -5,7 +5,8 @@
   "type": "module",
   "main": "src/app.js",
   "scripts": {
-    "dev": "node --watch ."
+    "dev": "node --watch .",
+    "start": "node ."
   },
   "keywords": [],
   "author": "Alvaro Estanislao Figueroa",
